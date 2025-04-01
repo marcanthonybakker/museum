@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js WillemTwee Test met Hiro Marker en NFT</title>
+
+    <!-- Nieuwe versies van A-Frame en AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
+
+        <!-- Hiro Marker (standaard marker van AR.js) -->
+        <a-marker preset="hiro">
+            <!-- Overlay Image voor Hiro Marker -->
+            <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
+        </a-marker>
+
+        <!-- NFT Marker 1: willemTweeNft.fset -->
+        <a-marker type="nft" url="./markers/amst.fset.json">
+            <!-- Overlay Image voor willemTweeNft.fset -->
+            <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
+        </a-marker>
+
+        <!-- NFT Marker 2: willemTweeNft.fset3 -->
+        <a-marker type="nft" url="./markers/amst.fset3.json">
+            <!-- Overlay Image voor willemTweeNft.fset3 -->
+            <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
+        </a-marker>
+
+        <!-- NFT Marker 3: willemTweeNft.iset -->
+        <a-marker type="nft" url="./markers/amst.iset.json">
+            <!-- Overlay Image voor willemTweeNft.iset -->
+            <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
+        </a-marker>
+
+        <!-- Camera -->
+        <a-camera position="0 0 0" look-controls-enabled="false"></a-camera>
+
+    </a-scene>
+</body>
+
+</html>
