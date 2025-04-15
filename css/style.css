@@ -1,0 +1,332 @@
+/* imbedded font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+
+/* var */
+
+:root {
+    --primairDonker: rgba(31, 29, 29, 1);
+    --secundairLicht: rgba(245, 245, 220, 1);
+    --tertiairWit: rgba(255, 255, 255, 0.5);
+}
+
+/* html */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* algemeen */
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif; 
+}
+
+h1, h2, h3, p, form {
+    color: var(--secundairLicht);
+}
+
+span {
+    line-height: 1.8rem;
+}
+
+p {
+    line-height: 1.8rem;
+}
+
+b {
+    font-weight: bold;
+}
+
+h2 {
+    margin: 1rem 0rem 0rem 0rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+/* hide */
+#hide {
+    visibility: hidden;
+}
+
+/* body */
+
+body {
+    background-color: var(--primairDonker);
+}
+
+/* header */
+
+ header img:first-of-type {
+    width: 15rem;
+    margin: 1rem 0rem 0rem 1rem;
+}
+
+/* main */
+
+main h1 {
+    margin: 3rem 0rem 0rem 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+main p, form {
+    margin: 0rem 0rem 0rem 1rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+/* taal.html */
+
+#taal main a:first-of-type{
+    margin: 2rem 1rem 0rem 1rem;
+}
+
+#taal main a{
+    margin: 1rem 1rem 0rem 1rem;
+    display: flex;
+    align-items: center;        
+    justify-content: left; 
+    width: auto;
+    background-color: var(--primairDonker);
+    color: var(--secundairLicht);                
+    border: 2px solid var(--secundairLicht);
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#taal main a img {
+    height: 5rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+
+
+
+
+
+
+/* menu.html */
+
+#menu main a:first-of-type{
+    margin: 2rem 1rem 0rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    width: auto;
+    padding: 1rem 1rem 1rem 1rem;
+    background-image: url('../img/ervaring.png'); /* jouw afbeelding hier */
+    background-size: cover;
+    background-position: center;
+    color: var(--secundairLicht);
+    border: 2px solid var(--secundairLicht);
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+#menu main a:first-of-type span:last-of-type {
+    color: var(--primairDonker);
+    background-color: var(--secundairLicht);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+#menu main a {
+    margin: 1rem 1rem 0rem 1rem;
+    display: flex;
+    align-items: center;        
+    justify-content: left; 
+    width: auto;
+    background-color: var(--primairDonker);
+    color: var(--secundairLicht);                
+    border: 2px solid var(--secundairLicht);
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#menu main a img {
+    height: 5rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+
+
+
+/* overzicht.html */
+
+#overzicht main a:first-of-type{
+    margin: 2rem 1rem 0rem 1rem;
+}
+
+#overzicht main a{
+    margin: 1rem 1rem 0rem 1rem;
+    display: flex;
+    align-items: center;        
+    justify-content: left; 
+    width: auto;
+    background-color: var(--primairDonker);
+    color: var(--secundairLicht);                
+    border: 2px solid var(--secundairLicht);
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#overzicht main a img {
+    height: 5rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+#overzicht section {
+    margin-bottom: 8rem;
+}
+
+
+
+
+
+/* instellingen.html */
+
+#instellingen article:nth-of-type(2) {
+    border-top: 2px solid var(--secundairLicht);
+    margin: 1rem;
+}
+
+#instellingen h2:first-of-type {
+    border-top: hidden;
+    padding-top: 0rem;
+}
+
+#instellingen h2 {
+    border-top: 2px solid var(--secundairLicht);
+    padding-top: 1rem;
+}
+
+#instellingen form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+#instellingen input {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+#instellingen label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#instellingen section {
+    margin-bottom: 8rem;
+}
+
+#instellingen input[type="radio"] {
+    accent-color: var(--secundairLicht);
+    background-color: var(--secundairLicht);
+}
+
+input[type="radio"]:checked::before {
+    accent-color: var(--secundairLicht);
+}
+
+#instellingen label img {
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+#instellingen span {
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+/* navigatie footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0rem 1rem 1rem 1rem;
+    background-color: var(--tertiairWit);
+    backdrop-filter: blur(0.25rem);
+    padding: 1.2rem 1rem;
+    z-index: 1000;
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+
+#footer nav ol {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#footer nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer nav li:first-child {
+    margin-left: 1rem;
+}
+
+#footer nav li:last-child {
+    margin-right: 1rem;
+}
+
+#footer nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--tertiairWit);
+    font-weight: bold;
+}
+
+#footer nav li:nth-child(2) a {
+    background-color: var(--secundairLicht);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--primairDonker);
+}
+
+#footer nav img {
+    height: 2.2rem;
+}
