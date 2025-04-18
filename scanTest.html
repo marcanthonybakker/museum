@@ -2,66 +2,94 @@
 <html lang="nl">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>AR Mobile Test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- A-Frame en AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        a-scene {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    </style>
+    <script src="./js/script.js" defer></script>
 </head>
 
-<body>
+<body id="scanTest">
+
     <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false;">
+        <!-- Hiro marker (voorbeeld) -->
         <a-marker preset="hiro">
             <a-box position="0 0.5 0" color="tomato"></a-box>
         </a-marker>
 
+        <!-- Custom patroon markers -->
         <a-marker type="pattern" url="markers/pattern-kimchi.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-koningin.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/koning.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-transformeer.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/transformeer.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-geruchten.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/geruchten.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
-        <a-marker preset="hiro">
-            <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
-
+        <!-- NFT marker -->
         <a-nft type="nft" url="markers/kimchi" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2"></a-image>
         </a-nft>
 
+        <!-- Camera -->
         <a-entity camera></a-entity>
     </a-scene>
+
+    <header>
+        <article>
+            <img src="./img/logo.svg" alt="Purmerends Museum Logo">
+        </article>
+    </header>
+
+    <main>
+        <section>
+            <article>
+                <button>×</button>
+                <h2>Hint</h2>
+                <img src="./img/hintUitleg.svg" alt="Hint afbeelding">
+                <ul>
+                    <li>Houdt 1 meter afstand van het schilderij.</li>
+                    <li>Zorg dat je het gehele portret in beeld hebt.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <!-- Navigatie footer -->
+    <footer id="footer">
+        <nav>
+            <ol>
+                <li>
+                    <a href="#" id="back-button">
+                        <img src="./img/terug.svg" alt="Terug">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="footer-hint">Hint</a>
+                </li>
+                <li>
+                    <a href="./instellingen.html">
+                        <img src="./img/instellingen.svg" alt="Instellingen">
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </footer>
+
+
+
 </body>
 
 </html>

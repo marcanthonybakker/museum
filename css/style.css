@@ -14,6 +14,10 @@
 
 html, body {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow: auto; /* zorg dat je popup gescrold kan worden indien nodig */
 }
 
 /* algemeen */
@@ -60,7 +64,7 @@ body {
 
 /* header */
 
- header img:first-of-type {
+header img:first-of-type {
     width: 15rem;
     margin: 1rem 0rem 0rem 1rem;
 }
@@ -448,6 +452,7 @@ footer {
 #footer nav li:nth-child(2) a {
     background-color: var(--secundairLicht);
     padding: 0.7rem 1rem;
+    width: 10rem;
     border-radius: 2rem;
     font-weight: bold;
     font-size: 1.3rem;
@@ -459,3 +464,115 @@ footer {
 }
 
 
+
+
+a-scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-bar {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 2rem;
+    z-index: 9999; /* Zorgt dat dit er bovenop ligt */
+}
+
+.menu-bar button {
+    background-color: var(--secundairLicht);
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    color: var(--primairDonker);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.menu-bar button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+#scanTest header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+#scanTest header article {
+    margin: 0rem;
+}
+
+#scanTest header img {
+    width: 15rem;
+}
+
+
+
+/* Popup stijl voor <main> als venster */
+#scanTest main {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 30rem;
+    background-color: var(--primairDonker); /* bijna zwart met transparantie */
+    border: 0.15rem solid var(--secundairLicht);
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+    z-index: 2000; /* bovenop camera en scene */
+    height: 70vh;
+}
+
+/* Sluitknop in popup */
+#scanTest main button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--secundairLicht);
+    cursor: pointer;
+}
+
+/* Afbeelding in popup */
+#scanTest main img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    border: 0.15rem solid var(--secundairLicht);
+    
+}
+
+#scanTest main {
+    display: none; /* standaard verborgen */
+}
+
+#scanTest main {
+    /* margin: 0.5rem 0rem 0rem 2.6rem; */
+    color: var(--secundairLicht);
+    font-weight: bold;  
+}
+
+#scanTest main ul {
+    margin: 1.3rem 0rem 0rem 0rem;
+}

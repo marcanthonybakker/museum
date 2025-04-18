@@ -9,31 +9,26 @@
     <!-- A-Frame en AR.js Scripts -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Vervang 'styles.css' door jouw bestandsnaam -->
 
 </head>
 
-<body style="margin: 0; overflow: hidden;">
+<body style="margin: 0; overflow: hidden; background-color: var(--primairDonker);">
 
     <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-
-        <!-- Marker: Vervang 'mymarker.patt' door jouw eigen markerbestand -->
         <a-marker type="pattern" url="markers/pattern-kimchi.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-koningin.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/koning.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-transformeer.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/transformeer.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="markers/pattern-geruchten.patt">
-            <!-- Overlay Image -->
             <a-image src="./img/geruchten.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
@@ -45,10 +40,9 @@
             <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2"></a-image>
         </a-nft>
 
-        <!-- Camera -->
         <a-camera position="0 0 0" look-controls-enabled="false"></a-camera>
-
     </a-scene>
+
 
 </body>
 
