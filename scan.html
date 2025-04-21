@@ -2,47 +2,38 @@
 <html lang="nl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR.js Image Tracking</title>
+    <meta charset="UTF-8" />
+    <title>Hara NFT Scan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
 
-    <!-- A-Frame en AR.js Scripts -->
+    <!-- A-Frame + AR.js NFT -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Vervang 'styles.css' door jouw bestandsnaam -->
-
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
 </head>
 
-<body style="margin: 0; overflow: hidden; background-color: var(--primairDonker);">
+<body>
+    <a-scene vr-mode-ui="enabled: false" embedded
+        arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best;">
 
-    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-        <a-marker type="pattern" url="markers/pattern-kimchi.patt">
-            <a-image src="./img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
+        <!-- NFT marker + stabiele AR afbeelding -->
+        <a-nft type="nft" url="markers/cara" smooth="true" smoothCount="40" smoothTolerance="0.005" smoothThreshold="3"
+            emitevents="true">
 
-        <a-marker type="pattern" url="markers/pattern-koningin.patt">
-            <a-image src="./img/koning.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
-
-        <a-marker type="pattern" url="markers/pattern-transformeer.patt">
-            <a-image src="./img/transformeer.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
-
-        <a-marker type="pattern" url="markers/pattern-geruchten.patt">
-            <a-image src="./img/geruchten.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
-
-        <a-marker preset="hiro">
-            <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
-        </a-marker>
-
-        <a-nft type="nft" url="markers/kimchi" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
-            <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2"></a-image>
+            <!-- Projectie bovenop fysieke afbeelding (pas evt. positie/rotatie aan) -->
+            <a-image src="img/willemTwee.jpg" position="0 0 -150" width="200" height="300" rotation="-90 0 0">
+            </a-image>
         </a-nft>
 
-        <a-camera position="0 0 0" look-controls-enabled="false"></a-camera>
+        <a-entity camera></a-entity>
     </a-scene>
-
 
 </body>
 
