@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="nl">
-
 <head>
     <meta charset="UTF-8" />
     <title>AR Mobile Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- A-Frame + AR.js voor NFT functionaliteit -->
+    <!-- A-Frame en AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
     <script src="./js/script.js" defer></script>
+
 </head>
 
 <body id="scanTest">
@@ -38,17 +36,6 @@
             <a-image src="./img/geruchten.png" position="0 0.5 0" width="2" height="2" rotation="-90 0 0"></a-image>
         </a-marker>
 
-        <!-- NFT marker -->
-        <a-nft type="nft" url="markers/kimchi" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
-            <a-image src="img/willemTwee.jpg" position="0 0.5 0" width="2" height="2"></a-image>
-        </a-nft>
-
-        <!-- Extra NFT marker (Hara) -->
-        <a-nft type="nft" url="markers/hara" smooth="true" smoothCount="500" smoothTolerance="0.02" smoothThreshold="4"
-            emitevents="true">
-            <a-image src="img/willemTwee.jpg" position="-50 0 -100" width="250" height="250"
-                rotation="-90 0 0"></a-image>
-        </a-nft>
 
         <!-- Camera -->
         <a-entity camera></a-entity>
@@ -100,6 +87,7 @@
     <div id="popup-transformeer" class="marker-popup" style="display: none;">
         <div class="popup-content">
             <a href="./willemIiVanOranjeMp.html" class="info-button">Koning Willem II Info</a>
+            <!-- <button id="popup-close">×</button> -->
         </div>
     </div>
 
