@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerHintBtn = document.getElementById("footer-hint");
   const closeBtn = document.querySelector("#scanTest main button");
   const mainPopup = document.querySelector("#scanTest main");
+  const transformeerPopup = document.getElementById("popup-transformeer");
+  const closeTransformeer = document.getElementById("popup-close");
 
   // Terugknop-functionaliteit
   if (backBtn) {
@@ -16,27 +18,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Verberg popup bij laden
+  // Hint-popup verbergen bij laden
   if (mainPopup) {
     mainPopup.style.display = "none";
   }
 
-  // Toggle via footer hint knop
+  // Toggle hint-popup
   if (footerHintBtn) {
     footerHintBtn.addEventListener("click", (event) => {
       event.preventDefault();
-      if (mainPopup.style.display === "none") {
-        mainPopup.style.display = "block";
-      } else {
-        mainPopup.style.display = "none";
-      }
+      mainPopup.style.display =
+        mainPopup.style.display === "none" ? "block" : "none";
     });
   }
 
-  // Sluitknop in de popup
+  // Sluit hint-popup
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       mainPopup.style.display = "none";
+    });
+  }
+
+  // Sluit marker-popup handmatig via X
+  if (closeTransformeer) {
+    closeTransformeer.addEventListener("click", () => {
+      transformeerPopup.style.display = "none";
+    });
+  }
+
+  // Toon popup als transformeer-marker zichtbaar is
+  const markerTransformeer = document.querySelector("a-marker[url='markers/pattern-transformeer.patt']");
+  if (markerTransformeer) {
+    markerTransformeer.addEventListener("markerFound", () => {
+      transformeerPopup.style.display = "block";
+    });
+
+    markerTransformeer.addEventListener("markerLost", () => {
+      transformeerPopup.style.display = "none";
     });
   }
 });

@@ -8,6 +8,7 @@
     --primairDonker: rgba(31, 29, 29, 1);
     --secundairLicht: rgba(245, 245, 220, 1);
     --tertiairWit: rgba(255, 255, 255, 0.5);
+    --quartairDonker: rgba(31, 29, 29, 0.5);
 }
 
 /* html */
@@ -401,6 +402,11 @@ input[type="radio"]:checked::before {
     margin: 0;
 }
 
+
+
+
+
+
 /* navigatie footer */
 
 footer {
@@ -500,7 +506,6 @@ a-scene {
     color: var(--primairDonker);
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .menu-bar button:hover {
@@ -529,7 +534,7 @@ a-scene {
 /* Popup stijl voor <main> als venster */
 #scanTest main {
     position: fixed;
-    top: 45%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -575,4 +580,65 @@ a-scene {
 
 #scanTest main ul {
     margin: 1.3rem 0rem 0rem 0rem;
+}
+
+
+
+
+
+/* pop up scan */
+
+.marker-popup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 6.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Achtergrond en border styling verwijderd */
+    padding: 1.2rem 1rem;
+    max-width: 90vw;
+    width: calc(100% - 2rem);
+    z-index: 999;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.marker-popup .popup-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Zorgt ervoor dat knoppen naast elkaar komen */
+    gap: 1rem; /* 1rem tussen de knoppen */
+}
+
+/* Algemene styling voor knoppen */
+.marker-popup button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--secundairLicht); /* Lichte tekstkleur */
+    background-color: var(--primairDonker); /* Donkere achtergrond */
+    border: 0.15rem solid var(--secundairLicht); /* Lichte rand */
+    border-radius: 2rem;
+    width: 2rem;
+}
+
+/* Info button - gecentreerd met lichtgrijze rand en donkere achtergrond */
+.marker-popup .info-button {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--secundairLicht); /* Lichte tekstkleur */
+    background-color: var(--primairDonker); /* Donkere achtergrond */
+    border: 0.15rem solid var(--secundairLicht); /* Lichte rand */
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: "Roboto", sans-serif;
+    display: inline-block; /* Zorgt ervoor dat de button correct wordt gecentreerd */
+    height: auto; /* Zorgt ervoor dat de hoogte dynamisch is */
 }
